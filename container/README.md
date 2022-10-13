@@ -1,13 +1,13 @@
 ```
 cd container
 # edit prometheus.yml beforehand
-docker run -d --name=prometheus -p 9090:9090 -v $PWD/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+docker run --rm --name=prometheus -p 9090:9090 -v $PWD/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
 https://grafana.com/grafana/dashboards/11378-justai-system-monitor/
 
-docker run -d --name=grafana -p 3000:3000 grafana/grafana
+docker run --rm --name=grafana -p 3000:3000 grafana/grafana
 
 
-# docker run -d --name=loki -p 3100:3100 grafana/loki
+# docker run --rm --name=loki -p 3100:3100 grafana/loki
 
 # https://grafana.com/docs/loki/latest/installation/docker/
 wget https://raw.githubusercontent.com/grafana/loki/v2.6.1/cmd/loki/loki-local-config.yaml -O loki-config.yaml
