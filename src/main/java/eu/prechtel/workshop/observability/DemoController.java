@@ -1,9 +1,7 @@
 package eu.prechtel.workshop.observability;
 
-import io.micrometer.core.annotation.Timed;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.cloud.sleuth.annotation.NewSpan;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
