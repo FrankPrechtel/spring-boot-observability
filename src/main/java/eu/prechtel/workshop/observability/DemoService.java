@@ -3,13 +3,11 @@ package eu.prechtel.workshop.observability;
 import io.micrometer.core.instrument.Metrics;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.springframework.cloud.sleuth.annotation.NewSpan;
 import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
 public class DemoService {
-    @NewSpan
     public String createTextForMessage(String text) {
         log.info("called createTextForMessage({})", text);
 		if ((text == null) || text.isBlank()) {
